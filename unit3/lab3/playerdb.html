@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head></head><body>
+
+
+<h1>CS260 Lab: Player Database</h1>
+
+<h2>Instructions</h2>
+
+<p>
+  Your RPG game would be incomplete without players so this lab is
+  going to add a player database.  In order to support fast updates to
+  the player database (who knows, maybe this is the next WoW!) you are
+  going to implement your player database with a hash table.
+</p>
+
+<p>
+  The player database holds all of the players.  In this stripped down
+  program each player only has a name, gender, and level.  Clearly you
+  would want to add other features (like race and skills and inventory
+  and ...) for a full featured game.  The database interface is
+  simple.  It allows you to add new users, remove users, or lookup
+  users in the database.
+</p>
+
+<h2>Implementation Requirements</h2>
+
+<p>
+  You are free to implement the player database with as many (or as
+  few) classes and you see fit to use.  However, you will need to make
+  sure that you use a hash table for storing the players.  Also, the
+  hash table needs to use the chaining technique for dealing with
+  collisions.
+</p>
+
+<h3>The hashtable</h3>
+
+<p>
+  Implementing the hash table is the core of this lab.  In order to
+  get a large number of collisions and be able to exercise all of the
+  features of the hash table your hash table will have a table size of
+  3 (just for this lab).  Normally that is far too small for a hash
+  table but it will be fine for this lab as a proof of concept.  Your
+  hash table should use chaining (linked list) for handling
+  collisions.  Finally, your hash table should have a &quot;diagnostics&quot;
+  function that will print out all of the data in your table (see the
+  provided output for the format).
+</p>
+
+<p>
+  You need to implement the hash function as described in the text book (page 692 in the 5th edition).  Also, use Horner's 
+  rule to avoid excessive computations.  Your hashing should match my output exactly.
+  Note that you may run into problems with signed versus unsigned numbers.  
+</p>
+
+<h3>The Player class</h3>
+
+<p>
+  The Player class is very simple.  It contains the user's name,
+  gender, and level.  The gender should be defined with an enum in the
+  Player.h file.  The valid values for the enum should be MALE,
+  FEMALE, UNKNOWN.  The Player class also needs a method called
+  LevelUp() that will increase the level of the player.  Depending on
+  how you implement the rest of your program, you may find that you
+  need other methods.  You are free to add as many other methods as
+  you wish.
+</p>
+
+<h3>The PlayerDB class</h3>
+
+<p>
+  The PlayerDB class is the player database.  This class holds the
+  hash table of players and manages the adding, fetching ,and removing
+  of players (see main.cpp for the exact names of the methods).  The
+  player database also has a method for printing the diagnostics of
+  the internal hash table.  
+</p>
+
+<p>
+  Pay special attention to the FetchPlayer() method.  Notice that it
+  returns a pointer to a player object.  This must be the same player
+  object that is being stored in the hash table.  In the test case
+  you'll see that LevelUp() is called on a returned pointer and then
+  the level for that player changes in the database.  Be sure to
+  implement this functionality.
+</p>
+
+<h2>To Submit This Assignment</h2>
+
+<p>
+  First, &quot;clean&quot; your project by doing the following: 
+</p>
+
+<ul>
+  <li>
+    execute <strong>Clean Solution</strong> in
+    the <strong>Build</strong> menu
+  </li>
+  <li>
+    close Visual Studio, and then delete the <strong>.ncb</strong>
+    file from your solution's root folder
+  </li>
+</ul>
+
+<p>
+
+  After cleaning your project, compress it
+  into <strong>lab3.zip</strong>. Make sure you have your Zip
+  application set to <em>preserve the folder structure</em> of your
+  project, and make sure that your .zip file <em>will extract into a
+  single folder</em>, the way that the .zip files from this course do.
+
+  <br/>
+
+  Doing these things will ensure that your .zip file is as small as
+  possible, which will make both your upload and my download quicker.
+
+  <br/>
+
+  Submit the .zip file containing your cleaned project to Desire2Learn.
+</p>
+
+
+</body></html>

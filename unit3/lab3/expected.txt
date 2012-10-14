@@ -1,0 +1,114 @@
+====================
+Hash Table Diagnostics
+
+Table Size: 3
+Number of Entries: 0
+Slot[0]:
+  EMPTY
+Slot[1]:
+  EMPTY
+Slot[2]:
+  EMPTY
+====================
+Fetching player "sleak" -- Failed.
+Attempting to add player "Brutus" to the database -- Success!
+Attempting to add player "Brutus" to the database -- Failed.
+Attempting to add player "Socrates" to the database -- Success!
+Attempting to add player "Sappho" to the database -- Success!
+====================
+Hash Table Diagnostics
+
+Table Size: 3
+Number of Entries: 3
+Slot[0]:
+  Sappho [0]
+  Brutus [0]
+Slot[1]:
+  EMPTY
+Slot[2]:
+  Socrates [0]
+====================
+Removing player "Socrates" from the database -- Success!
+====================
+Hash Table Diagnostics
+
+Table Size: 3
+Number of Entries: 2
+Slot[0]:
+  Sappho [0]
+  Brutus [0]
+Slot[1]:
+  EMPTY
+Slot[2]:
+  EMPTY
+====================
+Fetching player "Sappho" -- Success!
+====================
+Hash Table Diagnostics
+
+Table Size: 3
+Number of Entries: 2
+Slot[0]:
+  Sappho [1]
+  Brutus [0]
+Slot[1]:
+  EMPTY
+Slot[2]:
+  EMPTY
+====================
+Attempting to add player "a long player name to make sure our hash function will work with long names." to the database -- Success!
+====================
+Hash Table Diagnostics
+
+Table Size: 3
+Number of Entries: 3
+Slot[0]:
+  a long player name to make sure our hash function will work with long names. [0]
+  Sappho [1]
+  Brutus [0]
+Slot[1]:
+  EMPTY
+Slot[2]:
+  EMPTY
+====================
+Attempting to add player "Hypatia" to the database -- Success!
+Attempting to add player "Corinna" to the database -- Success!
+Attempting to add player "Euripides" to the database -- Success!
+Attempting to add player "Sophocles" to the database -- Success!
+Attempting to add player "Aristophanes" to the database -- Success!
+====================
+Hash Table Diagnostics
+
+Table Size: 3
+Number of Entries: 8
+Slot[0]:
+  Aristophanes [0]
+  Sophocles [0]
+  Corinna [0]
+  a long player name to make sure our hash function will work with long names. [0]
+  Sappho [1]
+  Brutus [0]
+Slot[1]:
+  EMPTY
+Slot[2]:
+  Euripides [0]
+  Hypatia [0]
+====================
+Removing player "Hypatia" from the database -- Success!
+Removing player "Brutus" from the database -- Success!
+====================
+Hash Table Diagnostics
+
+Table Size: 3
+Number of Entries: 6
+Slot[0]:
+  Aristophanes [0]
+  Sophocles [0]
+  Corinna [0]
+  a long player name to make sure our hash function will work with long names. [0]
+  Sappho [1]
+Slot[1]:
+  EMPTY
+Slot[2]:
+  Euripides [0]
+====================

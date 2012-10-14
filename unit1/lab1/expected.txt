@@ -1,0 +1,78 @@
+
+Current inventory:
+	(no items)
+
+Adding helmet with a weight of 5.
+You picked up a helmet.
+
+Current inventory:
+	[1] helmet
+Total items: 1
+Total weight: 5
+
+Adding braclet of power with a weight of 1.
+You picked up a braclet of power.
+Adding red potion with a weight of 2.
+You picked up a red potion.
+
+Current inventory:
+	[1] braclet of power
+	[1] helmet
+	[1] red potion
+Total items: 3
+Total weight: 8
+
+Adding braclet of power with a weight of 1.
+You picked up a braclet of power.
+
+Current inventory:
+	[2] braclet of power
+	[1] helmet
+	[1] red potion
+Total items: 4
+Total weight: 9
+
+Adding bag of gold coins with a weight of 50.
+You picked up a bag of gold coins.
+Adding bag of gold coins with a weight of 50.
+You're not strong enough to pick up the bag of gold coins with everything else you're carrying.
+Removing short sword.
+You don't have a short sword in your inventory.
+Removing helmet.
+You dropped a helmet.
+Removing braclet of power.
+You dropped a braclet of power.
+
+Current inventory:
+	[1] bag of gold coins
+	[1] braclet of power
+	[1] red potion
+Total items: 3
+Total weight: 53
+
+Removing braclet of power.
+You dropped a braclet of power.
+Removing red potion.
+You dropped a red potion.
+
+Current inventory:
+	[1] bag of gold coins
+Total items: 1
+Total weight: 50
+
+Adding the charred remains of the Staff of Law that destroyed in the battle with Elena-Raver before the fist of Collossus with a weight of 1.
+You picked up a the charred remains of the Staff of Law that destroyed in the battle with Elena-Raver before the fist of Collossus.
+Adding  with a weight of 0.
+You picked up a .
+Adding  with a weight of 0.
+You picked up a .
+Adding  with a weight of 0.
+You picked up a .
+
+Current inventory:
+	[3] 
+	[1] bag of gold coins
+	[1] the charred remains of the Staff of Law that destroyed in the battle with Elena-Raver before the fist of Collossus
+Total items: 5
+Total weight: 51
+

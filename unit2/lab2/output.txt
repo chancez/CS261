@@ -1,0 +1,78 @@
+Your potion (Wisdom) has been added to the queue!
+Your potion (Wisdom) has been added to the queue!
+Your potion (Speed) has been added to the queue!
+About to try to make some potions.
+Made a Wisdom potion.
+Made a Wisdom potion.
+Made a Speed potion.
+Made 3 potions.
+Your potion (Strength) has been added to the queue!
+Your potion (Health) has been added to the queue!
+Your potion (Health) has been added to the queue!
+Your potion (Wisdom) has been added to the queue!
+Your potion (Strength) has been added to the queue!
+The order queue is full.
+Congratulations! You just bought a Speed potion!
+Potion of Speed
+Congratulations! You just bought a Wisdom potion!
+Potion of Wisdom
+Congratulations! You just bought a Wisdom potion!
+Potion of Wisdom
+There were no potions available.
+About to try to make some potions.
+Made a Strength potion.
+Made a Health potion.
+Made a Health potion.
+Made a Wisdom potion.
+Made a Strength potion.
+Made 5 potions.
+Your potion (Strength) has been added to the queue!
+Your potion (Strength) has been added to the queue!
+Your potion (Strength) has been added to the queue!
+Your potion (Strength) has been added to the queue!
+Your potion (Strength) has been added to the queue!
+About to try to make some potions.
+Made a Strength potion.
+Made a Strength potion.
+Made a Strength potion.
+Made a Strength potion.
+Made a Strength potion.
+Made 5 potions.
+Your potion (Health) has been added to the queue!
+Your potion (Wisdom) has been added to the queue!
+Your potion (Health) has been added to the queue!
+Your potion (Wisdom) has been added to the queue!
+Your potion (Speed) has been added to the queue!
+About to try to make some potions.
+Made a Health potion.
+Made a Wisdom potion.
+Made a Health potion.
+Made a Wisdom potion.
+Made a Speed potion.
+Made 5 potions.
+Your potion (Health) has been added to the queue!
+Your potion (Health) has been added to the queue!
+Your potion (Health) has been added to the queue!
+Your potion (Health) has been added to the queue!
+Your potion (Health) has been added to the queue!
+About to try to make some potions.
+Made a Health potion.
+Made a Health potion.
+Made a Health potion.
+Made a Health potion.
+Made a Health potion.
+Made 5 potions.
+Your potion (Health) has been added to the queue!
+Your potion (Wisdom) has been added to the queue!
+Your potion (Health) has been added to the queue!
+Your potion (Wisdom) has been added to the queue!
+Your potion (Speed) has been added to the queue!
+About to try to make some potions.
+The shelf of potions is full.  You can't make any more until somebody buys some.
+Made 0 potions.
+Congratulations! You just bought a Health potion!
+Potion of Health
+About to try to make some potions.
+Made a Health potion.
+The shelf of potions is full.  You can't make any more until somebody buys some.
+Made 1 potions.

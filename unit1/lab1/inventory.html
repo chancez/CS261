@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head></head><body>
+
+
+<h1>CS260 Lab: Inventory</h1>
+
+<h2>Instructions</h2>
+
+<p>
+  Being an incurable computer geek, you have toyed around with the
+  idea of creating your own RPG or adventure game.  Of course there
+  are so many aspects of an adventure game it is nearly impossible to
+  consider them all at once so you have decided to start small.  Very
+  small.  You are going to write just the "inventory" part of the
+  game. 
+</p>
+
+<p>
+  Every player in the game has an inventory of the items he/she has.
+  Items such as swords, helmets, potions, gold, and so on.  Each
+  player can have more than one of any item but they also have a limit
+  on the total weight they can carry.  Players can see the list of all
+  of the items in their inventory.  They can add and remove items from
+  the list as well.
+</p>
+
+<p>
+  You have decided to implement the inventory as a linked list of
+  items.  The inventory list will support the ability to add an item,
+  remove an item, get the total count of items, the total weight, and
+  display the list.
+</p>
+
+<h2>Implementation Requirements</h2>
+
+<p>
+  Your implementation should have a class called "inventory" that
+  manages the entire inventory of your player. You will also need a
+  class called "item" that contains the information about each item.
+</p>
+
+<h3>The "item" class</h3>
+
+<p>
+  The "item" class is intended to hold the details about a particular
+  item.  Each item has a name (e.g. "red potion") and a weight
+  (e.g. 2.0).  The weight should be a double.  The "item" class should
+  have a constructor that takes in a char* name and a double weight.
+  You are free to add any other methods that you need.
+</p>
+
+<h3>The "inventory" class</h3>
+
+<p>
+  The "inventory" class is intended to hold all of the items in a
+  linked list. The "inventory" class should also maintain a "max
+  weight" data member that specifies the maximum weight that this
+  particular inventory can hold.  One of the "inventory" constructors
+  should set the default value for the weight to be 100.  There should
+  be another constructor that allows for the weight to be passed in.
+</p>
+
+<p>
+  The "inventory" class should contain a method called "AddItem".
+  This method will take in a new "item" object and add it to the
+  inventory.  Items need to be saved in the linked list in
+  alphabetical order.  Also, duplicate items should not be added as
+  new nodes but instead, the program should maintain an "item count"
+  for each item.  When a duplicate item is added to the inventory then
+  the item count for that item should be incremented.
+</p>
+
+<p>
+  The "inventory" class should contain a method called "RemoveItem".
+  This method takes a char* parameter, finds the node in the linked
+  list with that name, and removes that item.  Since there could be
+  duplicate items in the inventory, the remove method needs to be able
+  to just decrement the item count (see above) instead of remove the
+  node from the linked list.
+</p>
+
+<p>
+  The "inventory" class needs to have GetCount() and GetWeight()
+  methods that return the current item count and total weight.  You
+  are free to calculate this information on an "as needed" basis or
+  keep a class member variable that holds the information.
+</p>
+
+<p>
+  Finally, the "inventory" class needs to have a PrintInventory()
+  method that displays the inventory. Be sure to examine the sample
+  output (below) to see the exact format of the inventory output.
+</p>
+
+<p>
+  You may find it helpful to create a node structure that encapsulates
+  the "item", the item count, and the next pointer.  It's not a
+  requirement but I think you will find this makes it easier to write
+  the program.
+</p>
+
+<h3>Other requirements</h3>
+
+<p>
+  Below is a main.cpp file.  You must use this exact main.cpp file
+  without any modifications for your program.  In order for this to
+  work correctly you will need to make sure to use correct file names
+  "inventory.h" and "item.h".  You will also need to make sure to name
+  your classes and methods as described above.
+</p>
+
+<p>
+  When you run your program using this main function your program
+  should generate the output shown below exactly.  You need to match
+  the text exactly (including spaces and newlines).
+</p>
+
+<h3>main.cpp file</h3>
+
+<pre>
+#include <iostream>
+#include "item.h"
+#include "inventory.h"
+
+#ifdef _WIN32
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
+#endif
+
+using namespace std;
+
+void AddItem(inventory& inv,char* name,double weight)
+{
+	int len = strlen(name)+1;
+	char* itemName = new char[len];
+	strncpy(itemName,name,len);
+
+	cout << "Adding " << itemName << " with a weight of " << weight << "." << endl;
+	inv.AddItem(item(itemName,weight));
+
+	delete [] itemName;
+}
+
+void RemoveItem(inventory& inv,char* name)
+{
+	cout << "Removing " << name << "." << endl;
+	inv.RemoveItem(name);
+}
+
+void doTest() 
+{
+	inventory inv;
+
+	// Make sure printing an empty inventory works
+	inv.PrintInventory();
+
+	// Make sure adding the first one works
+	AddItem(inv,"helmet",5);
+	inv.PrintInventory();
+
+	// Add some more items
+	AddItem(inv,"braclet of power",1);
+	AddItem(inv,"red potion",2);
+	inv.PrintInventory();
+
+	// Add some duplicates
+	AddItem(inv,"braclet of power",1);
+	inv.PrintInventory();
+
+	// Add some heavy stuff
+	AddItem(inv,"bag of gold coins",50);
+	AddItem(inv,"bag of gold coins",50);
+
+	// Now some removes
+	RemoveItem(inv,"short sword");
+	RemoveItem(inv,"helmet");
+	RemoveItem(inv,"braclet of power");
+	inv.PrintInventory();
+
+	RemoveItem(inv,"braclet of power");
+	RemoveItem(inv,"red potion");
+	inv.PrintInventory();
+
+	// Now some crazy stuff
+	AddItem(inv,"the charred remains of the Staff of Law that destroyed in the battle with Elena-Raver before the fist of Collossus",1);
+	AddItem(inv,"",0);
+	AddItem(inv,"",0);
+	AddItem(inv,"",0);
+	inv.PrintInventory();
+
+}
+
+int main() {
+
+	doTest();
+
+#ifdef _WIN32
+	if (_CrtDumpMemoryLeaks()) {
+		cout << "Memory leaks!" << endl;
+	}
+#endif
+
+	return 0;
+}
+</pre>
+
+<h3>Expected Output</h3>
+
+<pre>
+
+Current inventory:
+	(no items)
+
+Adding helmet with a weight of 5.
+You picked up a helmet.
+
+Current inventory:
+	[1] helmet
+Total items: 1
+Total weight: 5
+
+Adding braclet of power with a weight of 1.
+You picked up a braclet of power.
+Adding red potion with a weight of 2.
+You picked up a red potion.
+
+Current inventory:
+	[1] braclet of power
+	[1] helmet
+	[1] red potion
+Total items: 3
+Total weight: 8
+
+Adding braclet of power with a weight of 1.
+You picked up a braclet of power.
+
+Current inventory:
+	[2] braclet of power
+	[1] helmet
+	[1] red potion
+Total items: 4
+Total weight: 9
+
+Adding bag of gold coins with a weight of 50.
+You picked up a bag of gold coins.
+Adding bag of gold coins with a weight of 50.
+You're not strong enough to pick up the bag of gold coins with everything else you're carrying.
+Removing short sword.
+You don't have a short sword in your inventory.
+Removing helmet.
+You dropped a helmet.
+Removing braclet of power.
+You dropped a braclet of power.
+
+Current inventory:
+	[1] bag of gold coins
+	[1] braclet of power
+	[1] red potion
+Total items: 3
+Total weight: 53
+
+Removing braclet of power.
+You dropped a braclet of power.
+Removing red potion.
+You dropped a red potion.
+
+Current inventory:
+	[1] bag of gold coins
+Total items: 1
+Total weight: 50
+
+Adding the charred remains of the Staff of Law that destroyed in the battle with Elena-Raver before the fist of Collossus with a weight of 1.
+You picked up a the charred remains of the Staff of Law that destroyed in the battle with Elena-Raver before the fist of Collossus.
+Adding  with a weight of 0.
+You picked up a .
+Adding  with a weight of 0.
+You picked up a .
+Adding  with a weight of 0.
+You picked up a .
+
+Current inventory:
+	[3] 
+	[1] bag of gold coins
+	[1] the charred remains of the Staff of Law that destroyed in the battle with Elena-Raver before the fist of Collossus
+Total items: 5
+Total weight: 51
+
+</pre>
+
+<h2>To Submit This Assignment</h2>
+
+<p>
+  First, "clean" your project by doing the following: 
+</p>
+
+<ul>
+  <li>
+    execute <strong>Clean Solution</strong> in
+    the <strong>Build</strong> menu
+  </li>
+  <li>
+    close Visual Studio, and then delete the <strong>.ncb</strong>
+    file from your solution's root folder
+  </li>
+</ul>
+
+<p>
+
+  After cleaning your project, compress it
+  into <strong>lab1.zip</strong>. Make sure you have your Zip
+  application set to <em>preserve the folder structure</em> of your
+  project, and make sure that your .zip file <em>will extract into a
+  single folder</em>, the way that the .zip files from this course do.
+
+  <br/>
+
+  Doing these things will ensure that your .zip file is as small as
+  possible, which will make both your upload and my download quicker.
+
+  <br/>
+
+  Submit the .zip file containing your cleaned project to Desire2Learn.
+</p>
+
+</body></html>
